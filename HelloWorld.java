@@ -12,6 +12,12 @@ public class HelloWorld {
     }  else {
       System.out.println("The number is odd");
     }
+    int x = Integer.parseInt(args[1]);
+    if(x % 2 == 0){
+      System.out.println("The number is even");
+    }  else {
+      System.out.println("The number is odd");
+    }
     //tastiera.close();
     //System.out.println("");
 
