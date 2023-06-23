@@ -10,5 +10,6 @@ public class ArrayExample {
         for (int b : ints) {
             System.out.println(b);
         }
+
     }
 }
