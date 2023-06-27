@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class LoopExamples {
 
@@ -21,7 +22,7 @@ public class LoopExamples {
             System.out.println("j = " + i);
         }
 */
-        int[][] matrix = {{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}};
+        int[][] matrix = {{1, 2, 3, 5}, {6, 7, 8, 9, 10}, {1, 2, 3, 4, 5}};
 
         // for (int[] value : matrix) {
         //   for (int k : value) {
@@ -29,22 +30,27 @@ public class LoopExamples {
         //  }
         //   System.out.println();
         // }
-        if (matrix[0].length < matrix[1].length) {
-            for (int i = 0; i < matrix[0].length; i++) {
-                for (int[] ints : matrix) {
-                    System.out.print(ints[i] + " ");
-                }
-                System.out.println();
-            }
+        if ((matrix[0].length < matrix[1].length)) {
+            stampaMatrice(matrix[0], matrix);
         } else {
-            for (int i = 0; i < matrix[1].length; i++) {
-                for (int[] ints : matrix) {
-                    System.out.print(ints[i] + " ");
-                }
-                System.out.println();
+            stampaMatrice(matrix[1], matrix);
+        }
+
+        int maxInt = Arrays.stream(matrix)
+                .map(array -> array.length)
+                .max(Integer::compareTo)
+                .orElse(0);
+
+    }
+
+    public static void stampaMatrice(int[] array, int[][] matrix) {
+        for (int i = 0; i < array.length; i++) {
+            for (int[] ints : matrix) {
+                System.out.print(ints[i] + " ");
             }
+            System.out.println();
         }
     }
 
-}
 
+}
